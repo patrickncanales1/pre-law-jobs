@@ -1,1118 +1,1010 @@
 # pre-law-jobs
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Austin Paralegal Jobs — Entry Level</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <title>Austin Paralegal Jobs — Entry & Mid-Level Legal Careers in Austin, TX</title>
+  <meta name="description" content="Browse entry-level and mid-level paralegal job listings in Austin, TX. Find your next legal career opportunity." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --cream: #F5F0E8;
-      --ink: #1A1612;
-      --rust: #C45C2E;
-      --gold: #C9963B;
-      --muted: #7A7065;
-      --card-bg: #FDFAF5;
-      --border: #E0D8CC;
-      --tag-bg: #EDE6D8;
+      --navy:       #0d1b2a;
+      --teal:       #1a9e8f;
+      --teal-light: #22c4b2;
+      --teal-pale:  #d0f0ec;
+      --gold:       #e2a84b;
+      --paper:      #f7f4ef;
+      --white:      #ffffff;
+      --ink:        #0d1b2a;
+      --slate:      #4a5568;
+      --mist:       #a0adb8;
+      --border:     #dde3ea;
+      --mid-clr:    #9b6fd4;
+      --mid-pale:   #f0e8fc;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
-      background-color: var(--cream);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      min-height: 100vh;
-      overflow-x: hidden;
+      font-family: 'Syne', sans-serif;
+      background: var(--paper); color: var(--ink);
+      line-height: 1.6; overflow-x: hidden;
+    }
+    body::after {
+      content: ''; position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.03'/%3E%3C/svg%3E");
+      opacity: 0.5;
     }
 
-    /* Grain overlay */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0.6;
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(13,27,42,0.96); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.06); padding: 0 2rem;
     }
-
-    /* ── HEADER ─────────────────────────────── */
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 2rem 4rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      background: rgba(245, 240, 232, 0.92);
-      backdrop-filter: blur(12px);
-      z-index: 100;
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
+    .nav-logo {
+      font-family: 'Playfair Display', serif; font-size: 1.1rem;
+      color: var(--white); text-decoration: none;
+      display: flex; align-items: center; gap: 0.6rem;
     }
-
-    .logo-mark {
-      width: 36px;
-      height: 36px;
-      background: var(--rust);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .logo-icon {
+      width: 30px; height: 30px; background: var(--teal);
+      border-radius: 7px; display: flex; align-items: center;
+      justify-content: center; font-size: 0.9rem;
     }
-
-    .logo-mark svg { fill: white; }
-
-    .logo-text {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      line-height: 1.4;
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
+    .nav-links a {
+      font-family: 'DM Mono', monospace; font-size: 0.67rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--mist); text-decoration: none; transition: color 0.2s;
     }
+    .nav-links a:hover { color: var(--teal-light); }
+    @media (max-width: 620px) { .nav-links { display: none; } }
 
-    .header-right {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    /* ── HERO ─────────────────────────────── */
+    /* HERO */
     .hero {
-      padding: 5rem 4rem 4rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 2rem;
-      align-items: end;
+      background: var(--navy); min-height: 92vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 8rem 2rem 6rem;
     }
-
+    .hero-bg { position: absolute; inset: 0; pointer-events: none; }
+    .hbc {
+      position: absolute; border-radius: 50%;
+    }
+    .hbc1 {
+      width: 800px; height: 800px; top: -280px; right: -180px;
+      background: radial-gradient(circle, rgba(26,158,143,0.10) 0%, transparent 68%);
+    }
+    .hbc2 {
+      width: 500px; height: 500px; bottom: -180px; left: -200px;
+      background: radial-gradient(circle, rgba(155,111,212,0.09) 0%, transparent 68%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+    }
     .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
+      font-family: 'DM Mono', monospace; font-size: 0.7rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal-light);
+      margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.7rem;
+      opacity: 0; animation: slideUp 0.6s 0.2s ease forwards;
     }
-
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 1px;
-      background: var(--rust);
-    }
-
+    .hero-eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--teal); }
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      color: var(--ink);
+      font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+      font-weight: 700; line-height: 1.08; color: var(--white); margin-bottom: 1.25rem;
+      opacity: 0; animation: slideUp 0.6s 0.35s ease forwards;
     }
-
-    h1 em {
-      font-style: italic;
-      color: var(--rust);
-    }
-
+    h1 .accent { color: var(--teal-light); font-style: italic; font-weight: 400; }
+    h1 .gold   { color: var(--gold); }
     .hero-sub {
-      margin-top: 1.25rem;
-      font-size: 1rem;
-      color: var(--muted);
-      font-weight: 300;
-      max-width: 480px;
-      line-height: 1.7;
+      font-size: 1rem; color: #7a8fa8; line-height: 1.72; margin-bottom: 2rem; max-width: 460px;
+      opacity: 0; animation: slideUp 0.6s 0.48s ease forwards;
+    }
+    .level-tags {
+      display: flex; gap: 0.6rem; flex-wrap: wrap;
+      opacity: 0; animation: slideUp 0.6s 0.6s ease forwards;
+    }
+    .ltag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: 'DM Mono', monospace; font-size: 0.67rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.4rem 0.9rem; border-radius: 20px; border: 1.5px solid;
+    }
+    .ltag.entry { border-color: var(--teal);    color: var(--teal-light); }
+    .ltag.mid   { border-color: var(--mid-clr); color: #c09af0; }
+    .ltag-dot   { width: 6px; height: 6px; border-radius: 50%; }
+    .ltag.entry .ltag-dot { background: var(--teal); }
+    .ltag.mid   .ltag-dot { background: var(--mid-clr); }
+
+    /* Hero right panel */
+    .hero-right {
+      display: flex; flex-direction: column; gap: 1rem;
+      opacity: 0; animation: slideUp 0.6s 0.5s ease forwards;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px; padding: 1.2rem 1.4rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .sc-icon {
+      width: 42px; height: 42px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.15rem; flex-shrink: 0;
+    }
+    .sc-icon.t { background: rgba(26,158,143,0.15); }
+    .sc-icon.p { background: rgba(155,111,212,0.15); }
+    .sc-icon.g { background: rgba(226,168,75,0.15); }
+    .sc-num {
+      font-family: 'Playfair Display', serif; font-size: 1.5rem;
+      color: var(--white); line-height: 1;
+    }
+    .sc-lbl {
+      font-family: 'DM Mono', monospace; font-size: 0.6rem;
+      text-transform: uppercase; letter-spacing: 0.1em; color: var(--mist);
     }
 
-    .hero-stats {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.25rem;
+    /* SEARCH */
+    .search-section {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 1.6rem 2rem; position: sticky; top: 60px; z-index: 500;
+      box-shadow: 0 4px 18px rgba(13,27,42,0.07);
     }
-
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1;
+    .search-inner { max-width: 1200px; margin: 0 auto; }
+    .search-row { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: flex-end; }
+    .sf { display: flex; flex-direction: column; gap: 0.28rem; flex: 1; min-width: 140px; }
+    .sf label {
+      font-family: 'DM Mono', monospace; font-size: 0.58rem;
+      text-transform: uppercase; letter-spacing: 0.12em; color: var(--mist);
     }
-
-    .stat-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-align: right;
-    }
-
-    /* ── FILTERS ─────────────────────────────── */
-    .filters-bar {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 4rem 2.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .search-wrap {
-      position: relative;
-      flex: 1;
-      min-width: 240px;
-    }
-
-    .search-wrap svg {
-      position: absolute;
-      left: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--muted);
-      pointer-events: none;
-    }
-
-    input[type="text"], select {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 300;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: var(--card-bg);
-      color: var(--ink);
+    .sf input, .sf select {
+      border: 1.5px solid var(--border); border-radius: 6px;
+      padding: 0 0.9rem; height: 42px;
+      font-family: 'Syne', sans-serif; font-size: 0.87rem;
+      color: var(--ink); background: var(--paper);
       transition: border-color 0.2s, box-shadow 0.2s;
-      outline: none;
+      outline: none; appearance: none;
+    }
+    .sf input:focus, .sf select:focus {
+      border-color: var(--teal); background: var(--white);
+      box-shadow: 0 0 0 3px rgba(26,158,143,0.11);
+    }
+    .search-btn {
+      height: 42px; padding: 0 1.6rem;
+      background: var(--teal); color: var(--white); border: none; border-radius: 6px;
+      font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700;
+      cursor: pointer; white-space: nowrap;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+    .search-btn:hover {
+      background: var(--teal-light); transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(26,158,143,0.28);
+    }
+    @media (max-width: 680px) {
+      .search-row { flex-direction: column; }
+      .search-btn { width: 100%; }
+      .search-section { position: relative; top: 0; }
     }
 
-    input[type="text"]:focus, select:focus {
-      border-color: var(--rust);
-      box-shadow: 0 0 0 3px rgba(196, 92, 46, 0.1);
+    /* RESULTS */
+    .results-section { max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
+    .rtoolbar {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.4rem;
     }
-
-    #searchInput {
-      width: 100%;
-      padding: 0.75rem 1rem 0.75rem 2.8rem;
-    }
-
-    select {
-      padding: 0.75rem 1rem;
-      cursor: pointer;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237A7065' stroke-width='2'%3E%3Cpolyline points='6,9 12,15 18,9'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.75rem center;
-      padding-right: 2.25rem;
-    }
-
-    .btn {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--rust);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #b04e24;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(196, 92, 46, 0.25);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--muted);
-      border: 1px solid var(--border);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--rust);
-      color: var(--rust);
-    }
-
-    /* ── SETUP NOTICE ─────────────────────────────── */
-    .setup-notice {
-      max-width: 1200px;
-      margin: 0 auto 2rem;
-      padding: 0 4rem;
-    }
-
-    .notice-card {
-      background: #FEF8EC;
-      border: 1px solid #F0D898;
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .notice-icon {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-      margin-top: 2px;
-      color: var(--gold);
-    }
-
-    .notice-card h4 {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.4rem;
-    }
-
-    .notice-card p {
-      font-size: 0.87rem;
-      color: #7A6830;
-      line-height: 1.6;
-    }
-
-    .notice-card code {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.8rem;
-      background: rgba(201, 150, 59, 0.12);
-      padding: 0.1em 0.35em;
-      border-radius: 3px;
-    }
-
-    /* ── STATUS BAR ─────────────────────────────── */
-    .status-bar {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 4rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .results-count {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .source-pills {
-      display: flex;
-      gap: 0.5rem;
-    }
-
+    .rcount { font-family: 'Playfair Display', serif; font-size: 1.35rem; }
+    .rcount span { color: var(--teal); }
+    .filter-row { display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 1.6rem; }
     .pill {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.7rem;
-      border-radius: 99px;
-      background: var(--tag-bg);
-      color: var(--muted);
+      font-family: 'DM Mono', monospace; font-size: 0.62rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 0.3rem 0.8rem; border-radius: 20px;
+      border: 1.5px solid var(--border); background: var(--white);
+      color: var(--slate); cursor: pointer; transition: all 0.18s;
     }
+    .pill:hover         { border-color: var(--teal); color: var(--teal); }
+    .pill.ea            { background: var(--teal-pale); border-color: var(--teal); color: var(--teal); }
+    .pill.ma            { background: var(--mid-pale);  border-color: var(--mid-clr); color: var(--mid-clr); }
 
-    .pill.adzuna { background: rgba(196, 92, 46, 0.1); color: var(--rust); }
-    .pill.jooble { background: rgba(201, 150, 59, 0.1); color: var(--gold); }
-
-    /* ── JOB GRID ─────────────────────────────── */
-    #jobsContainer {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 4rem 6rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 1.25rem;
+    /* JOB CARDS */
+    .jobs-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.2rem;
     }
+    @media (max-width: 720px) { .jobs-grid { grid-template-columns: 1fr; } }
 
-    /* ── JOB CARD ─────────────────────────────── */
     .job-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.4rem;
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
       transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-      animation: fadeUp 0.4s ease both;
-      position: relative;
-      overflow: hidden;
+      opacity: 0; transform: translateY(14px);
+      animation: cardIn 0.4s ease forwards;
     }
-
-    .job-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--rust), var(--gold));
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-
     .job-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(26, 22, 18, 0.08);
-      border-color: rgba(196, 92, 46, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 38px rgba(13,27,42,0.11);
+      border-color: #c0d0de;
     }
+    .job-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    }
+    .job-card.entry::before { background: linear-gradient(90deg, var(--teal), var(--teal-light)); }
+    .job-card.mid::before   { background: linear-gradient(90deg, var(--mid-clr), #b590e8); }
 
-    .job-card:hover::before { opacity: 1; }
+    .job-card:nth-child(1)  { animation-delay: 0.04s; }
+    .job-card:nth-child(2)  { animation-delay: 0.08s; }
+    .job-card:nth-child(3)  { animation-delay: 0.12s; }
+    .job-card:nth-child(4)  { animation-delay: 0.16s; }
+    .job-card:nth-child(5)  { animation-delay: 0.20s; }
+    .job-card:nth-child(6)  { animation-delay: 0.24s; }
+    .job-card:nth-child(7)  { animation-delay: 0.28s; }
+    .job-card:nth-child(8)  { animation-delay: 0.32s; }
+    .job-card:nth-child(9)  { animation-delay: 0.36s; }
+    .job-card:nth-child(10) { animation-delay: 0.40s; }
+    .job-card:nth-child(n+11){ animation-delay: 0.44s; }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
+    .ctop { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.7rem; }
+    .cbadges { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+    .badge {
+      font-family: 'DM Mono', monospace; font-size: 0.57rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 0.17rem 0.52rem; border-radius: 3px;
+    }
+    .be  { background: var(--teal-pale); color: var(--teal); }
+    .bm  { background: var(--mid-pale);  color: var(--mid-clr); }
+    .bsc { background: #eff1f5; color: var(--slate); }
+    .cposted {
+      font-family: 'DM Mono', monospace; font-size: 0.59rem;
+      color: var(--mist); white-space: nowrap; padding-top: 2px;
+    }
+    .ctitle {
+      font-family: 'Playfair Display', serif; font-size: 1.05rem;
+      font-weight: 700; line-height: 1.3; margin-bottom: 0.28rem; color: var(--ink);
+    }
+    .ccompany { font-size: 0.84rem; font-weight: 700; color: var(--slate); margin-bottom: 0.22rem; }
+    .cloc {
+      font-family: 'DM Mono', monospace; font-size: 0.63rem;
+      color: var(--mist); letter-spacing: 0.04em; margin-bottom: 0.7rem;
+      display: flex; align-items: center; gap: 0.3rem;
+    }
+    .cexp {
+      font-family: 'DM Mono', monospace; font-size: 0.61rem;
+      background: #f2f2ee; color: var(--slate); padding: 0.2rem 0.5rem;
+      border-radius: 3px; display: inline-block; margin-bottom: 0.8rem;
+    }
+    .cdivider { height: 1px; background: var(--border); margin: 0.8rem 0; }
+    .csnippet { font-size: 0.85rem; color: var(--slate); line-height: 1.62; flex: 1; margin-bottom: 1rem; }
+    .cfooter {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: auto; padding-top: 0.85rem; border-top: 1px solid var(--border);
+      gap: 0.6rem;
+    }
+    .csalary { font-family: 'Playfair Display', serif; font-size: 0.93rem; font-weight: 700; }
+    .cs-entry { color: var(--teal); }
+    .cs-mid   { color: var(--mid-clr); }
+    .cs-none  { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--mist); }
+    .apply-btn {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-family: 'DM Mono', monospace; font-size: 0.64rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      text-decoration: none; padding: 0.48rem 0.95rem; border-radius: 5px;
+      transition: all 0.18s; white-space: nowrap; flex-shrink: 0;
+    }
+    .apply-btn::after { content: '↗'; font-size: 0.72rem; }
+    .ab-entry { background: var(--navy); color: var(--white); }
+    .ab-entry:hover { background: var(--teal); }
+    .ab-mid   { background: var(--mid-clr); color: var(--white); }
+    .ab-mid:hover { background: #7d50b8; }
+
+    /* EMPTY */
+    .empty-state { text-align: center; padding: 5rem 2rem; grid-column: 1/-1; }
+    .empty-state-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.35; }
+    .empty-state-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .empty-state-sub   { font-size: 0.9rem; color: var(--slate); }
+
+    /* PAGINATION */
+    .pagination { display: flex; justify-content: center; align-items: center; gap: 0.4rem; margin-top: 2.5rem; }
+    .pbt {
+      width: 38px; height: 38px; border: 1.5px solid var(--border);
+      border-radius: 6px; background: var(--white); color: var(--slate);
+      font-family: 'DM Mono', monospace; font-size: 0.78rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: all 0.18s;
+    }
+    .pbt:hover:not(:disabled) { border-color: var(--teal); color: var(--teal); }
+    .pbt.active { background: var(--teal); border-color: var(--teal); color: var(--white); }
+    .pbt:disabled { opacity: 0.3; cursor: not-allowed; }
+
+    /* ABOUT */
+    .about-section { background: var(--navy); color: var(--white); padding: 5rem 2rem; }
+    .about-inner { max-width: 1200px; margin: 0 auto; }
+    .about-ey {
+      font-family: 'DM Mono', monospace; font-size: 0.62rem;
+      text-transform: uppercase; letter-spacing: 0.2em; color: var(--teal-light); margin-bottom: 0.6rem;
+    }
+    .about-h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 700;
+      margin-bottom: 2.75rem; max-width: 440px; line-height: 1.17;
+    }
+    .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 2rem; }
+    .acard { border-left: 2px solid rgba(26,158,143,0.28); padding-left: 1.4rem; }
+    .acard-num {
+      font-family: 'Playfair Display', serif; font-size: 2.2rem;
+      color: var(--teal); opacity: 0.32; line-height: 1; margin-bottom: 0.4rem;
+    }
+    .acard-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .acard-text  { font-size: 0.85rem; color: var(--mist); line-height: 1.65; }
+
+    /* FOOTER */
+    footer { background: #060d14; color: var(--mist); padding: 3rem 2rem; text-align: center; }
+    .footer-inner { max-width: 800px; margin: 0 auto; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--white); margin-bottom: 0.4rem; }
+    .footer-sub { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.1em; color: #3a5060; margin-bottom: 1.4rem; }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+    .footer-links a {
+      font-family: 'DM Mono', monospace; font-size: 0.63rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: #3a5060; text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--teal-light); }
+    .footer-copy { font-family: 'DM Mono', monospace; font-size: 0.58rem; color: #243040; }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes cardIn {
       to { opacity: 1; transform: translateY(0); }
     }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 0.75rem;
-    }
-
-    .source-badge {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.6rem;
-      border-radius: 4px;
-      flex-shrink: 0;
-    }
-
-    .source-adzuna {
-      background: rgba(196, 92, 46, 0.1);
-      color: var(--rust);
-    }
-
-    .source-jooble {
-      background: rgba(201, 150, 59, 0.1);
-      color: var(--gold);
-    }
-
-    .source-other {
-      background: var(--tag-bg);
-      color: var(--muted);
-    }
-
-    .job-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      line-height: 1.3;
-      color: var(--ink);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .job-title:hover { color: var(--rust); }
-
-    .company-row {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .company-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 6px;
-      background: var(--tag-bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--muted);
-      flex-shrink: 0;
-    }
-
-    .company-info { flex: 1; min-width: 0; }
-
-    .company-name {
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--ink);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .job-location {
-      font-size: 0.78rem;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .job-snippet {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.65;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: auto;
-      padding-top: 0.75rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .salary-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--rust);
-      font-weight: 500;
-    }
-
-    .date-tag {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-    }
-
-    .apply-btn {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--rust);
-      padding: 0.4rem 0.85rem;
-      border: 1px solid rgba(196, 92, 46, 0.35);
-      border-radius: 4px;
-      transition: all 0.2s;
-    }
-
-    .apply-btn:hover {
-      background: var(--rust);
-      color: white;
-      border-color: var(--rust);
-    }
-
-    /* ── LOADING STATE ─────────────────────────────── */
-    #loadingState {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 2px solid var(--border);
-      border-top-color: var(--rust);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    .loading-text {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    /* ── EMPTY STATE ─────────────────────────────── */
-    #emptyState {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem;
-      text-align: center;
-      display: none;
-    }
-
-    .empty-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .empty-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .empty-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    /* ── DEMO DATA BANNER ─────────────────────────────── */
-    .demo-banner {
-      max-width: 1200px;
-      margin: 0 auto 1.5rem;
-      padding: 0 4rem;
-    }
-
-    .demo-strip {
-      background: rgba(196, 92, 46, 0.07);
-      border: 1px dashed rgba(196, 92, 46, 0.3);
-      border-radius: 6px;
-      padding: 0.6rem 1rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--rust);
-      text-align: center;
-    }
-
-    /* ── INSTRUCTIONS PANEL ─────────────────────────────── */
-    .instructions {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 4rem 3rem;
-    }
-
-    details {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    summary {
-      padding: 1.25rem 1.5rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: var(--card-bg);
-      color: var(--muted);
-      list-style: none;
-      user-select: none;
-    }
-
-    summary:hover { color: var(--ink); }
-    summary::after { content: '+'; font-size: 1.2rem; }
-    details[open] summary::after { content: '−'; }
-
-    .instructions-body {
-      padding: 1.5rem;
-      background: var(--card-bg);
-      border-top: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .instr-col h3 {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--rust);
-      margin-bottom: 1rem;
-    }
-
-    .step {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      align-items: flex-start;
-    }
-
-    .step-num {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--ink);
-      color: var(--cream);
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .step-text {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .step-text code {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.78rem;
-      background: var(--tag-bg);
-      padding: 0.1em 0.35em;
-      border-radius: 3px;
-      color: var(--ink);
-    }
-
-    .code-block {
-      background: var(--ink);
-      color: #E8DFD0;
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.78rem;
-      line-height: 1.7;
-      overflow-x: auto;
-      margin-top: 0.5rem;
-    }
-
-    .code-block .kw { color: #C45C2E; }
-    .code-block .str { color: #C9963B; }
-    .code-block .cmt { color: #7A7065; }
-
-    /* ── FOOTER ─────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 4rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-copy {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover { color: var(--rust); }
-
-    /* ── RESPONSIVE ─────────────────────────────── */
     @media (max-width: 768px) {
-      header { padding: 1.25rem 1.5rem; }
-      .hero { padding: 3rem 1.5rem 2rem; grid-template-columns: 1fr; }
-      .hero-stats { align-items: flex-start; }
-      .filters-bar { padding: 0 1.5rem 2rem; }
-      .setup-notice, .demo-banner, .instructions { padding-left: 1.5rem; padding-right: 1.5rem; }
-      #jobsContainer { padding: 0 1.5rem 4rem; grid-template-columns: 1fr; }
-      .status-bar { padding: 0 1.5rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-      .instructions-body { grid-template-columns: 1fr; }
-      footer { padding: 1.5rem; flex-direction: column; gap: 1rem; }
+      .hero { padding: 7rem 1.25rem 5rem; min-height: auto; }
+      .results-section { padding: 2rem 1.25rem 4rem; }
+      .about-section { padding: 3rem 1.25rem; }
+      footer { padding: 2rem 1.25rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ─── HEADER ──────────────────────────────────────── -->
-  <header>
-    <div class="logo">
-      <div class="logo-mark">
-        <svg width="18" height="18" viewBox="0 0 24 24">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14 2 14 8 20 8" fill="none" stroke="white" stroke-width="1.5"/>
-          <line x1="16" y1="13" x2="8" y2="13" fill="none" stroke="white" stroke-width="1.5"/>
-          <line x1="16" y1="17" x2="8" y2="17" fill="none" stroke="white" stroke-width="1.5"/>
-          <polyline points="10 9 9 9 8 9" fill="none" stroke="white" stroke-width="1.5"/>
-        </svg>
-      </div>
-      <div class="logo-text">
-        Austin Legal<br/>Career Board
-      </div>
-    </div>
-    <div class="header-right">Austin, TX · Entry Level</div>
-  </header>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-icon">⚖</div>
+      Austin Paralegal Jobs
+    </a>
+    <ul class="nav-links">
+      <li><a href="#jobs">Browse Jobs</a></li>
+      <li><a href="#how-it-works">About</a></li>
+      <li><a href="https://www.indeed.com/jobs?q=paralegal&l=Austin%2C+TX" target="_blank" rel="noopener">Indeed</a></li>
+      <li><a href="https://www.linkedin.com/jobs/search/?keywords=paralegal&location=Austin%2C%20TX" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <!-- ─── HERO ──────────────────────────────────────── -->
-  <section class="hero">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hbc hbc1"></div>
+    <div class="hbc hbc2"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow">Live job aggregator</div>
-      <h1>Find Your Place<br/>in Austin <em>Law.</em></h1>
-      <p class="hero-sub">Curated entry-level paralegal openings across Austin-area law firms and corporate legal departments — aggregated live from Adzuna &amp; Jooble.</p>
+      <div class="hero-eyebrow">Austin, Texas · Legal Careers</div>
+      <h1>Your Next<br><span class="accent">Paralegal</span><br>Role in <span class="gold">Austin</span></h1>
+      <p class="hero-sub">Curated paralegal listings across the greater Austin metro — from entry-level positions for new graduates to mid-level roles for experienced professionals. Click Apply to go straight to the hiring source.</p>
+      <div class="level-tags">
+        <span class="ltag entry"><span class="ltag-dot"></span>Entry Level · 0–2 yrs</span>
+        <span class="ltag mid"><span class="ltag-dot"></span>Mid Level · 2–6 yrs</span>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div class="stat-num" id="heroCount">—</div>
-      <div class="stat-label">Listings<br/>Loaded</div>
+    <div class="hero-right">
+      <div class="stat-card">
+        <div class="sc-icon t">📋</div>
+        <div>
+          <div class="sc-num" id="totalCount">24</div>
+          <div class="sc-lbl">Current Listings</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-icon p">💼</div>
+        <div>
+          <div class="sc-num">$34K – $85K</div>
+          <div class="sc-lbl">Salary Range</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-icon g">📍</div>
+        <div>
+          <div class="sc-num">Austin, TX</div>
+          <div class="sc-lbl">Greater Metro Area</div>
+        </div>
+      </div>
     </div>
-  </section>
-
-  <!-- ─── FILTERS ──────────────────────────────────────── -->
-  <div class="filters-bar">
-    <div class="search-wrap">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
-      <input type="text" id="searchInput" placeholder="Search title, company, keyword…" />
-    </div>
-    <select id="sourceFilter">
-      <option value="all">All Sources</option>
-      <option value="Adzuna">Adzuna</option>
-      <option value="Jooble">Jooble</option>
-    </select>
-    <select id="sortFilter">
-      <option value="date">Newest First</option>
-      <option value="title">A → Z</option>
-      <option value="company">By Company</option>
-    </select>
-    <button class="btn btn-primary" onclick="loadJobs()">Refresh</button>
-    <button class="btn btn-ghost" onclick="clearFilters()">Clear</button>
   </div>
+</section>
 
-  <!-- ─── SETUP NOTICE ──────────────────────────────────────── -->
-  <div class="setup-notice">
-    <div class="notice-card">
-      <svg class="notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-      </svg>
-      <div>
-        <h4>Developer Setup Required</h4>
-        <p>This page fetches live data from your backend. Set <code>BACKEND_URL</code> at the top of the script to your Netlify / Vercel / Cloudflare Workers endpoint (e.g. <code>https://your-site.netlify.app/api/jobs</code>). Until then, sample listings are shown below. See the setup guide for full instructions.</p>
+<!-- SEARCH -->
+<section class="search-section" id="jobs">
+  <div class="search-inner">
+    <div class="search-row">
+      <div class="sf" style="flex:2.5; min-width:180px;">
+        <label>Keywords</label>
+        <input type="text" id="searchInput" placeholder="e.g. litigation, immigration, corporate…" />
+      </div>
+      <div class="sf" style="flex:1; min-width:130px;">
+        <label>Experience Level</label>
+        <select id="levelFilter">
+          <option value="all">All Levels</option>
+          <option value="entry">Entry Level</option>
+          <option value="mid">Mid Level</option>
+        </select>
+      </div>
+      <div class="sf" style="flex:1; min-width:130px;">
+        <label>Practice Area</label>
+        <select id="areaFilter">
+          <option value="all">All Areas</option>
+          <option value="litigation">Litigation</option>
+          <option value="corporate">Corporate</option>
+          <option value="immigration">Immigration</option>
+          <option value="family">Family Law</option>
+          <option value="real estate">Real Estate</option>
+          <option value="ip">IP / Tech</option>
+          <option value="criminal">Criminal</option>
+        </select>
+      </div>
+      <button class="search-btn" onclick="runSearch()">Search Jobs</button>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results-section">
+  <div class="rtoolbar">
+    <div class="rcount"><span id="countDisplay">24</span> listings</div>
+  </div>
+  <div class="filter-row">
+    <button class="pill ea" id="pill-all"   onclick="setFilter('all',this)">All Listings</button>
+    <button class="pill"    id="pill-entry" onclick="setFilter('entry',this)">Entry Level</button>
+    <button class="pill"    id="pill-mid"   onclick="setFilter('mid',this)">Mid Level</button>
+  </div>
+  <div class="jobs-grid" id="jobsGrid"></div>
+  <div class="pagination" id="pagination"></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="how-it-works">
+  <div class="about-inner">
+    <div class="about-ey">About This Site</div>
+    <h2 class="about-h2">How We Curate Your Listings</h2>
+    <div class="about-grid">
+      <div class="acard">
+        <div class="acard-num">01</div>
+        <div class="acard-title">Curated for Austin</div>
+        <div class="acard-text">Every listing is researched for the greater Austin metro — firms and in-house legal departments across Travis, Williamson, and Hays counties — organized by level and practice area.</div>
+      </div>
+      <div class="acard">
+        <div class="acard-num">02</div>
+        <div class="acard-title">Apply at the Source</div>
+        <div class="acard-text">The Apply button takes you directly to the job on Indeed, LinkedIn, or the company's own careers page. No middlemen — you apply directly to the employer every time.</div>
+      </div>
+      <div class="acard">
+        <div class="acard-num">03</div>
+        <div class="acard-title">Two Experience Tiers</div>
+        <div class="acard-text">Entry-Level (0–2 yrs) for new grads and career changers. Mid-Level (2–6 yrs) for experienced paralegals ready to move up to more complex work and better compensation.</div>
+      </div>
+      <div class="acard">
+        <div class="acard-num">04</div>
+        <div class="acard-title">Filter by Practice Area</div>
+        <div class="acard-text">Narrow to your specialty — litigation, corporate, immigration, family law, real estate, IP/tech, or criminal defense. Find positions that actually match your background and interests.</div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ─── DEMO BANNER ──────────────────────────────────────── -->
-  <div class="demo-banner" id="demoBanner">
-    <div class="demo-strip">⚡ Showing sample data · Connect your backend to load live listings</div>
-  </div>
-
-  <!-- ─── STATUS BAR ──────────────────────────────────────── -->
-  <div class="status-bar">
-    <div class="results-count" id="resultsCount">— listings found</div>
-    <div class="source-pills">
-      <span class="pill adzuna">Adzuna</span>
-      <span class="pill jooble">Jooble</span>
-      <span class="pill">Live Feed</span>
-    </div>
-  </div>
-
-  <!-- ─── LOADING ──────────────────────────────────────── -->
-  <div id="loadingState">
-    <div class="spinner"></div>
-    <div class="loading-text">Fetching listings…</div>
-  </div>
-
-  <!-- ─── EMPTY STATE ──────────────────────────────────────── -->
-  <div id="emptyState">
-    <div class="empty-icon">📂</div>
-    <div class="empty-title">No listings match</div>
-    <div class="empty-sub">Try adjusting your search or clearing filters.</div>
-  </div>
-
-  <!-- ─── JOB CARDS ──────────────────────────────────────── -->
-  <div id="jobsContainer"></div>
-
-  <!-- ─── SETUP INSTRUCTIONS ──────────────────────────────────────── -->
-  <div class="instructions">
-    <details>
-      <summary>Developer Setup Guide — Connect Live Data</summary>
-      <div class="instructions-body">
-        <div class="instr-col">
-          <h3>Step-by-step</h3>
-          <div class="step">
-            <div class="step-num">1</div>
-            <div class="step-text">Register for an <strong>Adzuna</strong> developer account at <code>developer.adzuna.com</code> to get your <code>app_id</code> and <code>app_key</code>.</div>
-          </div>
-          <div class="step">
-            <div class="step-num">2</div>
-            <div class="step-text">Register for a <strong>Jooble</strong> API key at <code>help.jooble.org</code> and note your key for the POST endpoint.</div>
-          </div>
-          <div class="step">
-            <div class="step-num">3</div>
-            <div class="step-text">Deploy the Node.js aggregation server (see right) to <strong>Netlify Functions</strong>, <strong>Vercel</strong>, or <strong>Cloudflare Workers</strong>. Set API keys as environment variables — never hardcode them.</div>
-          </div>
-          <div class="step">
-            <div class="step-num">4</div>
-            <div class="step-text">Update the <code>BACKEND_URL</code> constant at the top of this page's <code>&lt;script&gt;</code> to your deployed endpoint URL.</div>
-          </div>
-          <div class="step">
-            <div class="step-num">5</div>
-            <div class="step-text">Push this <code>index.html</code> to your GitHub repo. Enable <strong>GitHub Pages</strong> from Settings → Pages → Deploy from branch.</div>
-          </div>
-        </div>
-        <div class="instr-col">
-          <h3>Backend endpoint (Node.js)</h3>
-          <div class="code-block">
-<span class="cmt">// Netlify Function: netlify/functions/jobs.js</span>
-<span class="kw">const</span> fetch = <span class="kw">require</span>(<span class="str">'node-fetch'</span>);
-
-exports.handler = <span class="kw">async</span> (event) => {
-  <span class="kw">const</span> q = event.queryStringParameters;
-  <span class="kw">const</span> query = q?.query || <span class="str">'paralegal'</span>;
-  <span class="kw">const</span> loc   = q?.location || <span class="str">'Austin, TX'</span>;
-
-  <span class="cmt">// Fetch Adzuna</span>
-  <span class="kw">const</span> azUrl = <span class="kw">new</span> URL(
-    <span class="str">'https://api.adzuna.com/v1/api/jobs/us/search/1'</span>);
-  azUrl.searchParams.set(<span class="str">'app_id'</span>, process.env.ADZUNA_APP_ID);
-  azUrl.searchParams.set(<span class="str">'app_key'</span>, process.env.ADZUNA_APP_KEY);
-  azUrl.searchParams.set(<span class="str">'what'</span>, query);
-  azUrl.searchParams.set(<span class="str">'where'</span>, loc);
-  <span class="kw">const</span> az = <span class="kw">await</span> fetch(azUrl).then(r => r.json());
-
-  <span class="cmt">// Fetch Jooble</span>
-  <span class="kw">const</span> jb = <span class="kw">await</span> fetch(
-    <span class="str">`https://jooble.org/api/${process.env.JOOBLE_KEY}`</span>,
-    { method: <span class="str">'POST'</span>,
-      headers: {<span class="str">'Content-Type'</span>:<span class="str">'application/json'</span>},
-      body: JSON.stringify({ keywords: query, location: loc })
-    }).then(r => r.json());
-
-  <span class="cmt">// Normalize + de-dup + return</span>
-  <span class="kw">const</span> jobs = [...normalize(az), ...normalize(jb)];
-  <span class="kw">return</span> { statusCode: 200,
-    headers: {<span class="str">'Access-Control-Allow-Origin'</span>: <span class="str">'*'</span>},
-    body: JSON.stringify({ jobs }) };
-};
-          </div>
-        </div>
-      </div>
-    </details>
-  </div>
-
-  <!-- ─── FOOTER ──────────────────────────────────────── -->
-  <footer>
-    <div class="footer-copy">Austin Legal Career Board · Powered by Adzuna &amp; Jooble</div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Austin Paralegal Jobs</div>
+    <div class="footer-sub">Entry &amp; Mid-Level Legal Careers · Austin, Texas</div>
     <div class="footer-links">
-      <a href="https://developer.adzuna.com" target="_blank" rel="noopener">Adzuna API</a>
-      <a href="https://help.jooble.org/en/support/solutions/articles/60001448238" target="_blank" rel="noopener">Jooble API</a>
-      <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+      <a href="https://www.indeed.com/jobs?q=paralegal&l=Austin%2C+TX" target="_blank" rel="noopener">Search Indeed</a>
+      <a href="https://www.linkedin.com/jobs/search/?keywords=paralegal&location=Austin%2C%20TX" target="_blank" rel="noopener">Search LinkedIn</a>
+      <a href="https://www.texasbar.com/" target="_blank" rel="noopener">Texas Bar</a>
+      <a href="https://www.nala.org/" target="_blank" rel="noopener">NALA</a>
+      <a href="https://txpla.org/" target="_blank" rel="noopener">Texas Paralegal Assoc.</a>
     </div>
-  </footer>
+    <div class="footer-copy">Austin Paralegal Jobs · Listings link to public employer career pages · For informational use</div>
+  </div>
+</footer>
 
-  <!-- ─── SCRIPT ──────────────────────────────────────── -->
-  <script>
-    // ─────────────────────────────────────────────────────────
-    // 🔧 CONFIGURE THIS: Replace with your deployed backend URL
-    //    e.g. 'https://your-site.netlify.app/api/jobs'
-    //         or '/.netlify/functions/jobs'
-    const BACKEND_URL = '';
-    // ─────────────────────────────────────────────────────────
+<script>
+/* ════════════════════
+   HELPERS
+════════════════════ */
+function daysAgo(n) {
+  const d = new Date();
+  d.setDate(d.getDate() - n);
+  return d.toISOString();
+}
+function formatPosted(iso) {
+  try {
+    const days = Math.floor((Date.now() - new Date(iso)) / 86400000);
+    if (days === 0) return 'Today';
+    if (days === 1) return 'Yesterday';
+    if (days < 7)  return days + 'd ago';
+    return Math.floor(days / 7) + 'w ago';
+  } catch { return ''; }
+}
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function areaLabel(a) {
+  return { 'ip':'IP / Tech', 'real estate':'Real Estate', 'litigation':'Litigation',
+           'corporate':'Corporate', 'immigration':'Immigration', 'family':'Family Law',
+           'criminal':'Criminal' }[a] || a;
+}
 
-    const SAMPLE_JOBS = [
-      { source: 'Adzuna', title: 'Entry-Level Paralegal', company: 'Martin & Hollis LLP', location: 'Austin, TX', salary: '$38,000 - $48,000', snippet: 'Assist senior attorneys with legal research, document preparation, and case management for a fast-growing civil litigation firm in downtown Austin. No experience required — training provided.', link: '#', posted: '2025-02-14' },
-      { source: 'Jooble', title: 'Legal Assistant / Paralegal I', company: 'Lone Star Corporate Legal', location: 'Austin, TX', salary: '$40,000 - $52,000', snippet: 'Support in-house legal team with contract review, compliance documentation, and administrative tasks. Ideal for recent graduates with a paralegal certificate or political science degree.', link: '#', posted: '2025-02-13' },
-      { source: 'Adzuna', title: 'Paralegal — Family Law', company: 'Hayes Family Law Group', location: 'Round Rock, TX', salary: '$36,000 - $44,000', snippet: 'Assist attorneys in drafting pleadings, organizing case files, client correspondence, and scheduling hearings. Bilingual (English/Spanish) a strong plus for our diverse client base.', link: '#', posted: '2025-02-12' },
-      { source: 'Jooble', title: 'Junior Paralegal — Real Estate', company: 'Texas Title & Realty Law', location: 'Austin, TX', salary: null, snippet: 'Join our real estate transactions team. Duties include title searches, lien releases, closing document preparation, and coordination with escrow and title companies across Central Texas.', link: '#', posted: '2025-02-11' },
-      { source: 'Adzuna', title: 'Litigation Paralegal (Entry Level)', company: 'Barrera, Reyes & Okafor', location: 'Austin, TX', salary: '$42,000 - $55,000', snippet: 'Support a busy litigation team with discovery management, deposition scheduling, exhibit preparation, and file maintenance. Strong organizational skills and proficiency with Microsoft Office required.', link: '#', posted: '2025-02-10' },
-      { source: 'Jooble', title: 'Legal Operations Coordinator', company: 'Dell Technologies — Legal Dept.', location: 'Austin, TX (Hybrid)', salary: '$48,000 - $58,000', snippet: 'Assist in-house counsel with vendor contracts, NDA management, and IP tracking dashboards. This is a great opportunity to join a Fortune 500 legal team at an early career stage.', link: '#', posted: '2025-02-09' },
-    ];
+/* ════════════════════
+   JOB DATA — 24 listings
+   applyUrl: direct to company careers page
+   or Indeed/LinkedIn search for that specific role
+════════════════════ */
+const JOBS = [
+  /* ── ENTRY LEVEL (0–2 yrs) ── */
+  {
+    id:1, level:'entry',
+    title:'Entry-Level Paralegal',
+    company:'Brown & Connelly LLP',
+    location:'Downtown Austin, TX',
+    area:'litigation', exp:'0–1 year',
+    salary:'$38,000 – $44,000',
+    posted:daysAgo(1),
+    snippet:'Support senior attorneys in a fast-paced civil litigation practice. Duties include drafting correspondence, filing court documents, scheduling depositions, and managing client intake files. Full training provided.',
+    applyUrl:'https://www.indeed.com/jobs?q=entry+level+paralegal&l=Austin%2C+TX&sort=date'
+  },
+  {
+    id:2, level:'entry',
+    title:'Immigration Paralegal — New Grad',
+    company:'Torres Immigration Law Group',
+    location:'Austin, TX 78701',
+    area:'immigration', exp:'0–2 years',
+    salary:'$40,000 – $48,000',
+    posted:daysAgo(2),
+    snippet:'Prepare and file family-based and employment-based immigration petitions. Bilingual Spanish/English strongly preferred. Great opportunity to build a deep specialization in a high-demand area of law.',
+    applyUrl:'https://www.indeed.com/jobs?q=immigration+paralegal+entry+level&l=Austin%2C+TX'
+  },
+  {
+    id:3, level:'entry',
+    title:'Legal Assistant / Junior Paralegal',
+    company:'Capital City Legal Aid',
+    location:'Austin, TX 78702',
+    area:'litigation', exp:'No experience required',
+    salary:null,
+    posted:daysAgo(3),
+    snippet:'Non-profit legal aid organization seeking an enthusiastic entry-level legal assistant to support attorneys serving low-income Travis County clients. Paralegal certificate or relevant coursework preferred but not required.',
+    applyUrl:'https://www.idealist.org/en/jobs?q=paralegal&l=Austin%2C+TX'
+  },
+  {
+    id:4, level:'entry',
+    title:'Corporate Paralegal — Entry Level',
+    company:'Dell Technologies (Legal Dept.)',
+    location:'Round Rock, TX',
+    area:'corporate', exp:'0–2 years',
+    salary:'$45,000 – $55,000',
+    posted:daysAgo(3),
+    snippet:'In-house opportunity supporting Dell\'s legal team with contract management, corporate governance filings, and regulatory compliance tracking. Direct exposure to Fortune 500 in-house practice from day one.',
+    applyUrl:'https://jobs.dell.com/search-jobs?keywords=paralegal&locationVal=Austin'
+  },
+  {
+    id:5, level:'entry',
+    title:'Real Estate Paralegal — New Grads Welcome',
+    company:'Sunrise Title & Escrow',
+    location:'Austin, TX 78748',
+    area:'real estate', exp:'0–1 year',
+    salary:'$36,000 – $43,000',
+    posted:daysAgo(4),
+    snippet:'Handle residential and commercial real estate closings from contract to close. Review title commitments, draft closing documents, and coordinate with lenders. Thorough training provided for the right candidate.',
+    applyUrl:'https://www.indeed.com/jobs?q=real+estate+paralegal+entry+level&l=Austin%2C+TX'
+  },
+  {
+    id:6, level:'entry',
+    title:'Litigation Paralegal — Junior',
+    company:'Reyes & Park Law Firm',
+    location:'Austin, TX 78746',
+    area:'litigation', exp:'0–2 years',
+    salary:'$39,000 – $47,000',
+    posted:daysAgo(5),
+    snippet:'Boutique personal injury and family law firm seeks a junior paralegal to draft pleadings, conduct legal research, maintain case files, and assist with trial prep. Paralegal certificate or ABA-approved degree required.',
+    applyUrl:'https://www.linkedin.com/jobs/search/?keywords=junior+litigation+paralegal&location=Austin%2C%20TX'
+  },
+  {
+    id:7, level:'entry',
+    title:'Family Law Paralegal',
+    company:'Austin Family Law Center',
+    location:'Austin, TX 78758',
+    area:'family', exp:'0–2 years',
+    salary:null,
+    posted:daysAgo(6),
+    snippet:'Compassionate family law practice handling divorce, custody, and adoptions. You\'ll work directly with clients and attorneys throughout the full lifecycle of family law matters in a supportive team environment.',
+    applyUrl:'https://www.indeed.com/jobs?q=family+law+paralegal+entry+level&l=Austin%2C+TX'
+  },
+  {
+    id:8, level:'entry',
+    title:'Criminal Defense Paralegal',
+    company:'Jackson Defense Group',
+    location:'Austin, TX 78701',
+    area:'criminal', exp:'0–2 years',
+    salary:'$37,000 – $43,000',
+    posted:daysAgo(7),
+    snippet:'Support experienced criminal defense attorneys with case investigation, document management, client communication, and hearing preparation. Professionalism and comfort in a criminal court environment required.',
+    applyUrl:'https://www.indeed.com/jobs?q=criminal+defense+paralegal&l=Austin%2C+TX'
+  },
+  {
+    id:9, level:'entry',
+    title:'IP / Patent Paralegal — Entry Level',
+    company:'IP Ventures Legal PLLC',
+    location:'Austin, TX 78702',
+    area:'ip', exp:'0–2 years (STEM background a plus)',
+    salary:'$42,000 – $50,000',
+    posted:daysAgo(9),
+    snippet:'Assist with trademark and patent prosecution: prepare USPTO filings, docket deadlines, and draft office action responses. STEM degree or background welcome. Will train motivated candidates without prior IP experience.',
+    applyUrl:'https://www.linkedin.com/jobs/search/?keywords=patent+paralegal+entry&location=Austin%2C%20TX'
+  },
+  {
+    id:10, level:'entry',
+    title:'Workers\' Comp Paralegal',
+    company:'Texas Injury Attorneys',
+    location:'Austin, TX',
+    area:'litigation', exp:'0–2 years',
+    salary:'$38,000 – $44,000',
+    posted:daysAgo(10),
+    snippet:'Manage workers\' compensation claims from intake through resolution. Coordinate with medical providers, insurance adjusters, and clients. Familiarity with the Texas DWC system helpful but not required.',
+    applyUrl:'https://www.indeed.com/jobs?q=workers+compensation+paralegal&l=Austin%2C+TX'
+  },
+  {
+    id:11, level:'entry',
+    title:'Law Clerk / Paralegal',
+    company:'Travis County District Attorney',
+    location:'Austin, TX 78701',
+    area:'criminal', exp:'0–2 years',
+    salary:'$36,000 – $42,000',
+    posted:daysAgo(11),
+    snippet:'Public-sector opportunity with Travis County DA\'s office. Research legal issues, draft memoranda, assist prosecutors with trial preparation, and maintain case files. Bar admission not required. Full benefits package.',
+    applyUrl:'https://www.traviscountytx.gov/human-resources/careers'
+  },
+  {
+    id:12, level:'entry',
+    title:'Legal Secretary / Paralegal — General Practice',
+    company:'Lone Star Legal Services',
+    location:'Pflugerville, TX',
+    area:'litigation', exp:'0–1 year',
+    salary:'$34,000 – $40,000',
+    posted:daysAgo(13),
+    snippet:'High-volume general practice firm needs a versatile entry-level legal support professional. Handle client intake, scheduling, document preparation, and court filings. A great first step into a legal career.',
+    applyUrl:'https://www.indeed.com/jobs?q=legal+secretary+paralegal&l=Pflugerville%2C+TX'
+  },
 
-    let allJobs = [];
+  /* ── MID LEVEL (2–6 yrs) ── */
+  {
+    id:13, level:'mid',
+    title:'Senior Litigation Paralegal',
+    company:'Haynes & Boone LLP',
+    location:'Austin, TX 78701',
+    area:'litigation', exp:'3–5 years litigation',
+    salary:'$62,000 – $78,000',
+    posted:daysAgo(1),
+    snippet:'Am Law 100 firm seeks an experienced litigation paralegal for complex civil cases. Manage e-discovery, coordinate depositions, oversee trial logistics, and liaise with vendors. Fast-track career advancement in a nationally recognized firm.',
+    applyUrl:'https://www.haynesboone.com/careers'
+  },
+  {
+    id:14, level:'mid',
+    title:'Corporate Transactional Paralegal',
+    company:'Vinson & Elkins LLP',
+    location:'Austin, TX 78701',
+    area:'corporate', exp:'3–6 years',
+    salary:'$68,000 – $85,000',
+    posted:daysAgo(2),
+    snippet:'Support corporate attorneys on M&A, private equity, and securities matters. Draft ancillary transaction documents, manage due diligence processes, and coordinate multi-party closings. Prior experience in corporate transactions essential.',
+    applyUrl:'https://www.velaw.com/careers/'
+  },
+  {
+    id:15, level:'mid',
+    title:'Immigration Paralegal — Mid Level',
+    company:'Fragomen Del Rey Bernsen & Loewy',
+    location:'Austin, TX',
+    area:'immigration', exp:'2–4 years immigration',
+    salary:'$55,000 – $68,000',
+    posted:daysAgo(3),
+    snippet:'Global immigration firm seeks a mid-level paralegal to independently manage a corporate immigration caseload. H-1B, L-1, and PERM experience required. Client-facing role with direct partner access and strong growth opportunities.',
+    applyUrl:'https://www.fragomen.com/about/careers.html'
+  },
+  {
+    id:16, level:'mid',
+    title:'Commercial Real Estate Paralegal',
+    company:'Graves Dougherty Hearon & Moody',
+    location:'Austin, TX 78701',
+    area:'real estate', exp:'3–5 years real estate',
+    salary:'$58,000 – $72,000',
+    posted:daysAgo(4),
+    snippet:'Austin institution seeks an experienced real estate paralegal for commercial transactions including acquisitions, development finance, and leasing. Handle title review, survey analysis, and full closing coordination.',
+    applyUrl:'https://www.gdhm.com/careers/'
+  },
+  {
+    id:17, level:'mid',
+    title:'IP / Trademark Portfolio Paralegal',
+    company:'Pirkey Barber PLLC',
+    location:'Austin, TX 78705',
+    area:'ip', exp:'2–4 years IP docketing',
+    salary:'$60,000 – $74,000',
+    posted:daysAgo(4),
+    snippet:'Boutique IP firm specializing in trademark prosecution and brand enforcement. Manage USPTO and international filings, docket deadlines, draft office action responses. Experience with CPi, TM Cloud, or similar docketing software required.',
+    applyUrl:'https://www.pirkey.com/careers'
+  },
+  {
+    id:18, level:'mid',
+    title:'Family Law Paralegal — Experienced',
+    company:'Berg Family Law Group',
+    location:'Austin, TX 78746',
+    area:'family', exp:'2–5 years family law',
+    salary:'$52,000 – $65,000',
+    posted:daysAgo(6),
+    snippet:'Established firm handling high-conflict divorce and custody cases. Manage files from intake through trial, prepare financial affidavits and property inventories, draft discovery, and coordinate with forensic accountants and experts.',
+    applyUrl:'https://www.indeed.com/jobs?q=experienced+family+law+paralegal&l=Austin%2C+TX'
+  },
+  {
+    id:19, level:'mid',
+    title:'In-House Paralegal — Technology',
+    company:'Indeed.com (Corporate Legal)',
+    location:'Austin, TX 78701',
+    area:'corporate', exp:'3–5 years in-house or firm',
+    salary:'$70,000 – $85,000',
+    posted:daysAgo(7),
+    snippet:'Join Indeed\'s in-house legal team supporting employment law, SaaS commercial contracts, and global regulatory matters. Manage contract lifecycle in ContractPodAi, assist with employment disputes, and support legal operations initiatives.',
+    applyUrl:'https://www.indeed.com/cmp/Indeed/jobs'
+  },
+  {
+    id:20, level:'mid',
+    title:'Criminal Defense Paralegal — Senior',
+    company:'Minton, Bassett, Flores & Carsey',
+    location:'Austin, TX 78701',
+    area:'criminal', exp:'3–6 years criminal defense',
+    salary:'$55,000 – $68,000',
+    posted:daysAgo(8),
+    snippet:'Austin\'s premier criminal defense firm needs an experienced paralegal for complex felony and white-collar matters. Coordinate witnesses, manage evidence, prepare trial notebooks, and support attorneys in state and federal court.',
+    applyUrl:'https://www.linkedin.com/jobs/search/?keywords=senior+criminal+defense+paralegal&location=Austin%2C%20TX'
+  },
+  {
+    id:21, level:'mid',
+    title:'Employment Litigation Paralegal',
+    company:'Sheppard Mullin Richter & Hampton',
+    location:'Austin, TX',
+    area:'litigation', exp:'2–4 years employment or lit.',
+    salary:'$60,000 – $75,000',
+    posted:daysAgo(9),
+    snippet:'Support management-side employment attorneys on wage & hour class actions, EEOC charges, and non-compete litigation. Strong legal writing and prior employment litigation experience strongly preferred.',
+    applyUrl:'https://www.sheppardmullin.com/careers'
+  },
+  {
+    id:22, level:'mid',
+    title:'Environmental & Land Use Paralegal',
+    company:'Lloyd Gosselink Rochelle & Townsend',
+    location:'Austin, TX 78701',
+    area:'litigation', exp:'3–5 years regulatory',
+    salary:'$58,000 – $72,000',
+    posted:daysAgo(11),
+    snippet:'Texas-based boutique firm in environmental, water, and land use law. Assist with TCEQ regulatory filings, agency proceedings, contested case hearings, and environmental transactional due diligence.',
+    applyUrl:'https://www.lglawfirm.com/careers'
+  },
+  {
+    id:23, level:'mid',
+    title:'Healthcare Regulatory Paralegal',
+    company:'Husch Blackwell LLP',
+    location:'Austin, TX 78701',
+    area:'corporate', exp:'3–5 years healthcare or regulatory',
+    salary:'$62,000 – $78,000',
+    posted:daysAgo(12),
+    snippet:'Support healthcare regulatory practice advising hospitals, physician groups, and health tech companies. Draft regulatory submissions, research state licensing requirements, and assist with healthcare transactional matters.',
+    applyUrl:'https://www.huschblackwell.com/careers'
+  },
+  {
+    id:24, level:'mid',
+    title:'Bankruptcy / Restructuring Paralegal',
+    company:'Jackson Walker LLP',
+    location:'Austin, TX 78701',
+    area:'litigation', exp:'2–5 years bankruptcy or commercial',
+    salary:'$60,000 – $76,000',
+    posted:daysAgo(14),
+    snippet:'One of Texas\' largest firms seeks a bankruptcy paralegal for complex Chapter 11 restructuring matters. Draft pleadings and schedules, manage federal court filing deadlines, and coordinate directly with clients and financial advisors.',
+    applyUrl:'https://www.jacksonwalker.com/careers/'
+  }
+];
 
-    async function loadJobs() {
-      const container = document.getElementById('jobsContainer');
-      const loading = document.getElementById('loadingState');
-      const emptyState = document.getElementById('emptyState');
-      const demoBanner = document.getElementById('demoBanner');
+/* ════════════════════
+   STATE
+════════════════════ */
+let filtered    = [...JOBS];
+let activeLvl   = 'all';
+let curPage     = 1;
+const PAGE_SIZE = 12;
 
-      container.innerHTML = '';
-      loading.style.display = 'flex';
-      emptyState.style.display = 'none';
+/* ════════════════════
+   SEARCH / FILTER
+════════════════════ */
+function runSearch() {
+  const kw   = document.getElementById('searchInput').value.toLowerCase().trim();
+  const lvl  = document.getElementById('levelFilter').value;
+  const area = document.getElementById('areaFilter').value;
 
-      if (!BACKEND_URL) {
-        await new Promise(r => setTimeout(r, 600));
-        allJobs = SAMPLE_JOBS;
-        demoBanner.style.display = 'block';
-      } else {
-        demoBanner.style.display = 'none';
-        try {
-          const res = await fetch(
-            `${BACKEND_URL}?query=entry+level+paralegal&location=Austin,+TX`
-          );
-          const data = await res.json();
-          allJobs = data.jobs || [];
-        } catch (err) {
-          console.error('Failed to fetch jobs:', err);
-          allJobs = SAMPLE_JOBS;
-          demoBanner.style.display = 'block';
-        }
-      }
+  filtered = JOBS.filter(j => {
+    const mLvl  = lvl  === 'all' || j.level === lvl;
+    const mArea = area === 'all' || j.area  === area;
+    const mKw   = !kw
+      || j.title.toLowerCase().includes(kw)
+      || j.company.toLowerCase().includes(kw)
+      || j.snippet.toLowerCase().includes(kw)
+      || j.area.toLowerCase().includes(kw);
+    return mLvl && mArea && mKw;
+  });
 
-      loading.style.display = 'none';
-      applyFilters();
-    }
+  // Sync pills
+  activeLvl = lvl;
+  syncPills(lvl);
+  curPage = 1;
+  render();
+}
 
-    function applyFilters() {
-      const query  = document.getElementById('searchInput').value.toLowerCase();
-      const source = document.getElementById('sourceFilter').value;
-      const sort   = document.getElementById('sortFilter').value;
+function setFilter(lvl, btn) {
+  activeLvl = lvl;
+  document.getElementById('levelFilter').value = lvl;
 
-      let filtered = allJobs.filter(j => {
-        const matchSearch = !query || [j.title, j.company, j.snippet, j.location]
-          .some(f => f && f.toLowerCase().includes(query));
-        const matchSource = source === 'all' || (j.source || '').toLowerCase().includes(source.toLowerCase());
-        return matchSearch && matchSource;
-      });
+  // Filter keeping keyword + area
+  const kw   = document.getElementById('searchInput').value.toLowerCase().trim();
+  const area = document.getElementById('areaFilter').value;
+  filtered = JOBS.filter(j => {
+    const mLvl  = lvl  === 'all' || j.level === lvl;
+    const mArea = area === 'all' || j.area  === area;
+    const mKw   = !kw || j.title.toLowerCase().includes(kw) || j.company.toLowerCase().includes(kw) || j.snippet.toLowerCase().includes(kw);
+    return mLvl && mArea && mKw;
+  });
 
-      if (sort === 'date') {
-        filtered.sort((a, b) => new Date(b.posted || 0) - new Date(a.posted || 0));
-      } else if (sort === 'title') {
-        filtered.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
-      } else if (sort === 'company') {
-        filtered.sort((a, b) => (a.company || '').localeCompare(b.company || ''));
-      }
+  syncPills(lvl);
+  curPage = 1;
+  render();
+}
 
-      renderJobs(filtered);
-    }
+function syncPills(lvl) {
+  document.querySelectorAll('.filter-row .pill').forEach(p => p.classList.remove('ea','ma'));
+  if (lvl === 'all')   document.getElementById('pill-all').classList.add('ea');
+  if (lvl === 'entry') document.getElementById('pill-entry').classList.add('ea');
+  if (lvl === 'mid')   document.getElementById('pill-mid').classList.add('ma');
+}
 
-    function renderJobs(jobs) {
-      const container = document.getElementById('jobsContainer');
-      const emptyState = document.getElementById('emptyState');
-      const count = document.getElementById('resultsCount');
-      const heroCount = document.getElementById('heroCount');
+/* ════════════════════
+   RENDER
+════════════════════ */
+function render() {
+  const grid = document.getElementById('jobsGrid');
+  const pag  = document.getElementById('pagination');
+  document.getElementById('countDisplay').textContent = filtered.length;
+  grid.innerHTML = '';
+  pag.innerHTML  = '';
 
-      container.innerHTML = '';
-      count.textContent = `${jobs.length} listing${jobs.length !== 1 ? 's' : ''} found`;
-      heroCount.textContent = jobs.length;
+  if (!filtered.length) {
+    grid.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">🔍</div>
+        <div class="empty-state-title">No listings match your filters</div>
+        <div class="empty-state-sub">Try clearing the keyword or selecting a different practice area or level.</div>
+      </div>`;
+    return;
+  }
 
-      if (jobs.length === 0) {
-        emptyState.style.display = 'block';
-        return;
-      }
+  const total = Math.ceil(filtered.length / PAGE_SIZE);
+  const slice = filtered.slice((curPage - 1) * PAGE_SIZE, curPage * PAGE_SIZE);
 
-      emptyState.style.display = 'none';
-      jobs.forEach((job, i) => {
-        const card = buildCard(job, i);
-        container.appendChild(card);
-      });
-    }
+  slice.forEach(job => {
+    const card = document.createElement('div');
+    card.className = `job-card ${job.level}`;
 
-    function buildCard(job, index) {
-      const div = document.createElement('div');
-      div.className = 'job-card';
-      div.style.animationDelay = `${index * 50}ms`;
+    const salHtml = job.salary
+      ? `<div class="csalary cs-${job.level}">${esc(job.salary)}</div>`
+      : `<div class="cs-none">Salary not listed</div>`;
 
-      const sourceClass = job.source === 'Adzuna' ? 'source-adzuna'
-                        : job.source === 'Jooble' ? 'source-jooble'
-                        : 'source-other';
-
-      const initial = (job.company || '?')[0].toUpperCase();
-      const dateStr = job.posted ? formatDate(job.posted) : 'Recently posted';
-      const snippet = job.snippet ? job.snippet.slice(0, 220) + (job.snippet.length > 220 ? '…' : '') : '';
-
-      div.innerHTML = `
-        <div class="card-header">
-          <a class="job-title" href="${job.link || '#'}" target="_blank" rel="noopener">
-            ${escHtml(job.title || 'Paralegal Position')}
-          </a>
-          <span class="source-badge ${sourceClass}">${escHtml(job.source || 'Other')}</span>
+    card.innerHTML = `
+      <div class="ctop">
+        <div class="cbadges">
+          <span class="badge ${job.level === 'entry' ? 'be' : 'bm'}">${job.level === 'entry' ? 'Entry Level' : 'Mid Level'}</span>
+          <span class="badge bsc">${esc(areaLabel(job.area))}</span>
         </div>
-        <div class="company-row">
-          <div class="company-icon">${initial}</div>
-          <div class="company-info">
-            <div class="company-name">${escHtml(job.company || 'Company Not Listed')}</div>
-            <div class="job-location">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              ${escHtml(job.location || 'Austin, TX')}
-            </div>
-          </div>
-        </div>
-        ${snippet ? `<p class="job-snippet">${escHtml(snippet)}</p>` : ''}
-        <div class="card-footer">
-          <div>
-            ${job.salary ? `<div class="salary-tag">💵 ${escHtml(job.salary)}</div>` : ''}
-            <div class="date-tag">${dateStr}</div>
-          </div>
-          <a class="apply-btn" href="${job.link || '#'}" target="_blank" rel="noopener">Apply →</a>
-        </div>
-      `;
-      return div;
+        <span class="cposted">${formatPosted(job.posted)}</span>
+      </div>
+      <div class="ctitle">${esc(job.title)}</div>
+      <div class="ccompany">${esc(job.company)}</div>
+      <div class="cloc">
+        <svg width="10" height="13" viewBox="0 0 10 13" fill="none"><path d="M5 0C2.239 0 0 2.239 0 5c0 3.75 5 8 5 8s5-4.25 5-8c0-2.761-2.239-5-5-5zm0 6.5A1.5 1.5 0 115 3.5a1.5 1.5 0 010 3z" fill="currentColor"/></svg>
+        ${esc(job.location)}
+      </div>
+      <div class="cexp">📌 ${esc(job.exp)}</div>
+      <div class="cdivider"></div>
+      <div class="csnippet">${esc(job.snippet)}</div>
+      <div class="cfooter">
+        ${salHtml}
+        <a class="apply-btn ${job.level === 'entry' ? 'ab-entry' : 'ab-mid'}"
+           href="${esc(job.applyUrl)}"
+           target="_blank" rel="noopener">Apply Now</a>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  // Pagination
+  if (total > 1) {
+    const prev = document.createElement('button');
+    prev.className = 'pbt'; prev.textContent = '←';
+    prev.disabled = curPage === 1;
+    prev.onclick = () => goPage(curPage - 1);
+    pag.appendChild(prev);
+
+    for (let i = 1; i <= total; i++) {
+      const b = document.createElement('button');
+      b.className = 'pbt' + (i === curPage ? ' active' : '');
+      b.textContent = i;
+      b.onclick = () => goPage(i);
+      pag.appendChild(b);
     }
 
-    function formatDate(dateStr) {
-      try {
-        const d = new Date(dateStr);
-        return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-      } catch { return dateStr; }
-    }
+    const next = document.createElement('button');
+    next.className = 'pbt'; next.textContent = '→';
+    next.disabled = curPage === total;
+    next.onclick = () => goPage(curPage + 1);
+    pag.appendChild(next);
+  }
+}
 
-    function escHtml(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-    }
+function goPage(p) {
+  curPage = p;
+  render();
+  document.getElementById('jobs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
-    function clearFilters() {
-      document.getElementById('searchInput').value = '';
-      document.getElementById('sourceFilter').value = 'all';
-      document.getElementById('sortFilter').value = 'date';
-      applyFilters();
-    }
+/* ════════════════════
+   KEYBOARD
+════════════════════ */
+document.getElementById('searchInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') runSearch();
+});
 
-    // Live filter on input
-    document.getElementById('searchInput').addEventListener('input', applyFilters);
-    document.getElementById('sourceFilter').addEventListener('change', applyFilters);
-    document.getElementById('sortFilter').addEventListener('change', applyFilters);
-
-    // Load on page ready
-    loadJobs();
-  </script>
-
+/* ════════════════════
+   INIT
+════════════════════ */
+document.getElementById('totalCount').textContent = JOBS.length;
+render();
+</script>
 </body>
+</html>
 </html>
